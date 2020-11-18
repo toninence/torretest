@@ -14,15 +14,15 @@ function Trail({ open, children, ...props }) {
     })
     return (
         <>
-                {trail.map(({ x, height, ...rest }, index) => (
-                    <a.div
-                        key={items[index]}
-                        className="trails-text"
-                        style={{ ...rest, transform: x.interpolate((x) => `translate3d(0,${x}px,0)`) }}>
-                        <a.div>{items[index]}</a.div>
-                    </a.div>
-                ))}
-            </>
+            {trail.map(({ x, height, ...rest }, index) => (
+                <a.div
+                    key={items[index]}
+                    className="trails-text"
+                    style={{ ...rest, transform: x.interpolate((x) => `translate3d(0,${x}px,0)`) }}>
+                    <a.div>{items[index]}</a.div>
+                </a.div>
+            ))}
+        </>
     )
 }
 
@@ -31,14 +31,27 @@ export default function Card({ data }) {
     const Card = styled.div`
     width: 90%;
     min-height: 450px;
-    border-radius: 10px;
     font-family: 'Poppins', sans-serif;
     color: white;
     margin: 10px auto;
+
     padding: 15px;
     box-shadow: -2px -2px 6px #383b40,6px 6px 6px rgba(0,0,0,.24);
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+    `;
+    const CardContent = styled.div`
+    width: 300px;
+    min-height: 450px;
+    display: flex;
+    flex-direction: row;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    padding: 10px;
+    margin-top: 10px;
+
     `;
     const Avatar = styled.div`
     height: 100px;
@@ -75,13 +88,6 @@ export default function Card({ data }) {
     &:hover {
         color: rgba(255,255,255,0.5); 
       }    
-    `;
-    const CardContent = styled.div`
-    width: 25%;
-    display: flex;
-    flex-direction: row;
-    border-right: 1px solid black;
-    padding: 10px;
     `;
     const Habilities = styled.button`
     display: inline-block;
@@ -136,20 +142,25 @@ export default function Card({ data }) {
                 </div>
             </CardContent>
             <CardContent>
-                <div style={{display: "flex", flexDirection: "column"}}>
-                <Title style={{textAlign: 'center'}}>
-                    Habilidades Actuales
+                <div style={{ display: "flex", flexDirection: "column" }}>
+                    <Title style={{ textAlign: 'center' }}>
+                        Habilidades Actuales
                 </Title>
-                <div style={{display: "flex", flexDirection: "row", flexWrap: 'wrap'}}>
-                <Trail open={true}>
-                   {strengths && strengths.map( strength => {
-                    return <Habilities>{strength.name}</Habilities>
-                })}
-                </Trail>
-                </div>
-                
+                    <div style={{ display: "flex", flexDirection: "row", flexWrap: 'wrap' }}>
+                        <Trail open={true}>
+                            {strengths && strengths.map(strength => {
+                                return <Habilities>{strength.name}</Habilities>
+                            })}
+                        </Trail>
+                    </div>
+
                 </div>
             </CardContent>
+            <CardContent><Title>Habilidades que él/ella quiere desarrollar: </Title></CardContent>
+            <CardContent><Title>resume</Title></CardContent>
+            <CardContent><Title>Linea de tiempo </Title></CardContent>
+            <CardContent><Title>Idiomas: </Title></CardContent>
+            <CardContent><Title>adsfs</Title></CardContent>
         </Card >
     )
 
