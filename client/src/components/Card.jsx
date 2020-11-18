@@ -7,7 +7,7 @@ import { FaLinkedin, FaGithubSquare } from 'react-icons/fa';
 function Trail({ open, children, ...props }) {
     const items = React.Children.toArray(children)
     const trail = useTrail(items.length, {
-        config: { mass: 5, tension: 2000, friction: 220 },
+        config: { mass: 5, tension: 2000, friction: 250 },
         opacity: open ? 1 : 0,
         x: open ? 0 : 10,
         from: { opacity: 0, x: 20, height: 0 },
@@ -41,6 +41,8 @@ export default function Card({ data }) {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: left;
+    background-color: rgba(0,0,0,0.7);
+
     `;
     const CardContent = styled.div`
     width: 300px;
@@ -48,7 +50,6 @@ export default function Card({ data }) {
     display: flex;
     flex-direction: row;
     border-right: 1px solid black;
-    border-left: 1px solid black;
     padding: 10px;
     margin-top: 10px;
 
@@ -91,7 +92,7 @@ export default function Card({ data }) {
     `;
     const Habilities = styled.button`
     display: inline-block;
-    width: min-content;
+    width: max-content;
     border-radius: 19px;
     border: none;
     background-color: rgba(0,0,0,0.2);
@@ -160,7 +161,6 @@ export default function Card({ data }) {
             <CardContent><Title>resume</Title></CardContent>
             <CardContent><Title>Linea de tiempo </Title></CardContent>
             <CardContent><Title>Idiomas: </Title></CardContent>
-            <CardContent><Title>adsfs</Title></CardContent>
         </Card >
     )
 
