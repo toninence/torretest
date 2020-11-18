@@ -6,12 +6,15 @@ export default function Navbar() {
     height: 50px;
     border-bottom: 1px solid #414347;
     padding-top: 10px;
-    text-align: center;
-    color: white;
+    padding-left: 65px;
+    text-align: left;
+    color: black;
+    font-size: 2rem;
+    font-weight: bold;
     `;
     return (
         <Header>
-            Navigation
+            Genoma Profesional
         </Header>
     )
 }
