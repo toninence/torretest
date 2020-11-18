@@ -17,10 +17,10 @@
   },
   "scripts": {
     "start-client": "react-scripts start",
-    "build": "react-scripts build && (cd server && yarn install)",
+    "build": "react-scripts build && (cd api && yarn install)",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start": "cd api $$ npm start"
+    "start": "cd api $$ yarn start"
   },
   "eslintConfig": {
     "extends": [
