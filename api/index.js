@@ -1,5 +1,7 @@
 const server = require('./src/App.js');
 
-  server.listen(3001, () => {
-    console.log('%s listening at 3001'); // eslint-disable-line no-console
+var port = process.env.PORT || 8000
+
+  server.listen(port, () => {
+    console.log('%s listening at ' + port); // eslint-disable-line no-console
   });
